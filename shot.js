@@ -8,5 +8,21 @@ const shots = [
   "Toma el shot con los pies juntos y balanceándote ⚖️",
   "Toma el shot haciendo una pose de superhéroe 🦸‍♂️",
   "Toma el shot mientras intentas decir un trabalenguas 🤯",
-  "Toma el shot con una cara graciosa 😜"
+  "Toma el shot con una cara graciosa 😜",
+  "Que tu pareja te escupa el shot en la boca 😏",
+  "Tomar el shot y luego dar 10 vueltas 🔄",
+  "Tomar el shot sin manos 🙌",
+  "Tomar el shot del ombligo de tu pareja 😳",
+  "Toma el shot mientras haces un mini baile improvisado 💃",
+  "Toma el shot sosteniendo el vaso solo con los labios 👄",
+  "Toma el shot mientras haces un salto en el lugar 🦘",
+  "Toma el shot girando tu cabeza 360° antes de beber 🤸‍♂️",
+  "Toma el shot mientras tu pareja te hace cosquillas 🤪",
+  "Toma el shot haciendo un mini reto de equilibrio en un pie ⚖️",
+  "Toma el shot mientras haces un gesto dramático de película 🎬",
+  "Toma el shot mientras pasas el vaso por debajo de tu pierna 🦵",
+  "Toma el shot haciendo 3 saltitos antes de beber 🐇",
+  "Toma el shot mientras intentas girar el vaso sin derramarlo 🍸",
+  "Toma el shot haciendo un mini reto de muecas con tu pareja 😝",
+  "Toma el shot mientras giras en círculo y tu pareja te guía 🌀"
 ];
