@@ -7,7 +7,26 @@
 </head>
 <body>
   <h1>¿Verdad o Reto?</h1>
-  <button class="verdad" onclick="location.href='verdad.html'">Verdad</button>
-  <button class="reto" onclick="location.href='reto.html'">Reto</button>
+
+  <!-- Selector de tipo y categoría -->
+  <label for="tipo">Elige tipo:</label>
+  <select id="tipo">
+    <option value="pregunta">Verdad</option>
+    <option value="reto">Reto</option>
+  </select>
+
+  <label for="categoria">Elige categoría:</label>
+  <select id="categoria">
+    <option value="romantica">Romántica 💕</option>
+    <option value="erotica">Erótica 🔥</option>
+    <option value="casual">Casual 😄</option>
+    <option value="picante">Picante Extrema 😈</option>
+    <option value="profunda">Profunda 🧠</option>
+  </select>
+
+  <button onclick="generar()">Escoger</button>
+
+  <h2 id="resultado"></h2>
+
 </body>
 </html>
