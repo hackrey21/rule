@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruleta de Verdades</title>
+  <script src="datos.js"></script>
+  <script src="ruleta.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center; padding: 40px; background: #f3e5f5;
+      font-family: sans-serif;
+    }
+    button {
+      font-size: 24px; padding: 10px 30px; margin-top: 20px;
+    }
+    #resultado {
+      margin-top: 30px; font-size: 24px; color: #6a1b9a;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Gira la ruleta de RETOOOS!</h1>
+  <button id="girar">Girar</button>
+  <div id="resultado"></div>
+  <button id="hechoBtn" onclick="window.location.href='index.html'" style="padding: 10px 20px; font-size: 16px; display:none;">
+  Hecho
+</button>
+  <script>mostrarPregunta("reto", retos);</script>
+</body>
+</html>
