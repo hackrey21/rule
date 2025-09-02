@@ -24,26 +24,31 @@ function obtenerPregunta(tipo, categoria, lista) {
   return disponibles[randomIndex];
 }
 
-function mostrarPregunta(lista) {
+function mostrarPregunta(lista, tipoSeleccionado, categoriaSeleccionada) {
   const btnGirar = document.getElementById("girar");
   const salida = document.getElementById("resultado");
   const btnHecho = document.getElementById("hechoBtn");
+  const shotBtn = document.getElementById("shotBtn");
 
   btnGirar.addEventListener("click", () => {
-    const tipo = document.getElementById("tipo").value;          // verdad o reto
-    const categoria = document.getElementById("categoria").value; // categoría seleccionada
+    if (!tipoSeleccionado || !categoriaSeleccionada) {
+      alert("Selecciona primero un tipo y una categoría");
+      return;
+    }
 
     btnGirar.disabled = true;
-    btnHecho.style.display = "none";  
+    btnHecho.style.display = "none";
+    shotBtn.style.display = "none";
     salida.textContent = "Girando...";
 
     setTimeout(() => {
-      const pregunta = obtenerPregunta(tipo, categoria, lista);
+      const pregunta = obtenerPregunta(tipoSeleccionado, categoriaSeleccionada, lista);
       if (pregunta) {
         salida.textContent = pregunta;
       }
       btnGirar.disabled = false;
-      btnHecho.style.display = "inline-block"; 
+      btnHecho.style.display = "inline-block";
+      shotBtn.style.display = "inline-block";
     }, 2000);
   });
 }

@@ -1,32 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <title>¿Verdad o Reto?</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fdf6f0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #ff4d6d;
+    }
+
+    .opciones,
+    .categorias {
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .tipo-btn {
+      background-color: #ff9a9e;
+      color: white;
+    }
+
+    .categoria-btn {
+      background-color: #ffe29f;
+      color: #333;
+    }
+
+    #girar {
+      background-color: #ff4d6d;
+      color: white;
+      font-weight: bold;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #333;
+      min-height: 50px;
+    }
+
+    #hechoBtn, #shotBtn {
+      margin-top: 10px;
+      background-color: #4caf50;
+      color: white;
+      display: none;
+    }
+
+    .selected {
+      border: 2px solid #333;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+  </style>
 </head>
+
 <body>
   <h1>¿Verdad o Reto?</h1>
 
-  <!-- Selector de tipo y categoría -->
-  <label for="tipo">Elige tipo:</label>
-  <select id="tipo">
-    <option value="pregunta">Verdad</option>
-    <option value="reto">Reto</option>
-  </select>
+  <div class="opciones">
+    <p>Elige Tipo:</p>
+    <button class="tipo-btn" data-tipo="verdad">Verdad</button>
+    <button class="tipo-btn" data-tipo="reto">Reto</button>
+  </div>
 
-  <label for="categoria">Elige categoría:</label>
-  <select id="categoria">
-    <option value="romantica">Romántica 💕</option>
-    <option value="erotica">Erótica 🔥</option>
-    <option value="casual">Casual 😄</option>
-    <option value="picante">Picante Extrema 😈</option>
-    <option value="profunda">Profunda 🧠</option>
-  </select>
+  <div class="categorias">
+    <p>Elige Categoría:</p>
+    <button class="categoria-btn" data-categoria="romanticos">Romántica 💕</button>
+    <button class="categoria-btn" data-categoria="eroticos">Erótica 🔥</button>
+    <button class="categoria-btn" data-categoria="casuales">Casual 😄</button>
+    <button class="categoria-btn" data-categoria="picantes">Picante 😈</button>
+    <button class="categoria-btn" data-categoria="profundos">Profunda 🧠</button>
+  </div>
 
-  <button onclick="generar()">Escoger</button>
-
+  <button id="girar">Escoger</button>
   <h2 id="resultado"></h2>
+  <!-- Botones de resultado -->
+  <div style="margin-top:10px;">
+    <button id="hechoBtn">Hecho</button>
+    <button id="shotBtn">Shot 🥃</button>
+  </div>
+
+
+  <script src="datos.js"></script>
+  <script src="ruleta.js"></script>
+  <script>
+    let tipoSeleccionado = null;
+    let categoriaSeleccionada = null;
+
+    // Manejo de selección de tipo
+    document.querySelectorAll('.tipo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tipoSeleccionado = btn.getAttribute('data-tipo');
+        document.querySelectorAll('.tipo-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Manejo de selección de categoría
+    document.querySelectorAll('.categoria-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoriaSeleccionada = btn.getAttribute('data-categoria');
+        document.querySelectorAll('.categoria-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    document.getElementById('girar').addEventListener('click', () => {
+      if (!tipoSeleccionado || !categoriaSeleccionada) {
+        alert('Selecciona primero un tipo y una categoría');
+        return;
+      }
+      mostrarPregunta(juego, tipoSeleccionado, categoriaSeleccionada);
+    });
+  </script>
+  <script src="shot.js"></script>
+  <script src="shotdata.js"></script>
 
 </body>
+
 </html>
